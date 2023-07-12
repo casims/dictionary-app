@@ -1,4 +1,4 @@
-function PageWord() {
+function PageAllWords() {
     return(
         <section>
             
@@ -6,4 +6,4 @@ function PageWord() {
     );
 };
 
-export default PageWord;
+export default PageAllWords;
