@@ -10,7 +10,6 @@ import PageAllWords from "./pages/PageAllWords";
 import PageSingleWord from "./pages/PageSingleWord";
 import PageSearch from "./pages/PageSearch";
 
-
 const root = createRoot(document.getElementById('root'));
 
 root.render(
