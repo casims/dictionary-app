@@ -17,8 +17,8 @@ root.render(
     <Routes>
       <Route path="/" element={<PageMain />}/>
       <Route path="/words/" element={<PageAllWords />}/>
-      <Route path="/words/:value" element={<PageSingleWord />}/>
-      <Route path="/search/:value" element={<PageSearch />}/>
+      <Route path="/words/:word" element={<PageSingleWord />}/>
+      <Route path="/search/:word" element={<PageSearch />}/>
     </Routes>
   </BrowserRouter>
 );
