@@ -1,26 +1,12 @@
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AppRouter from './router/AppRouter';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
-
-//Pages
-import PageMain from "./pages/PageMain";
-import PageAllWords from "./pages/PageAllWords";
-import PageSingleWord from "./pages/PageSingleWord";
-import PageSearch from "./pages/PageSearch";
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<PageMain />}/>
-      <Route path="/words/" element={<PageAllWords />}/>
-      <Route path="/words/:word" element={<PageSingleWord />}/>
-      <Route path="/search/:word" element={<PageSearch />}/>
-    </Routes>
-  </BrowserRouter>
+  <React.StrictMode>
+    <AppRouter/>
+  </React.StrictMode>
 );
-
-reportWebVitals();
