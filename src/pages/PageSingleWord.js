@@ -8,7 +8,12 @@ function PageSingleWord() {
 
     useEffect(() => {
         document.title = `${APP_INFO.title} - ${word}`;
-    }, []);  
+    }, []);
+
+    const fetchWordData = async () => {
+        const resDictionary = await fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${API_KEY_DICTIONARY}`);
+        
+    };
 
     return(
         <section>
