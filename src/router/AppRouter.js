@@ -9,10 +9,12 @@ function AppRouter() {
 
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" exact element={<PageMain />}/>
-                <Route path="/:word" element={<PageSingleWord />}/>
-            </Routes>
+            <main>
+                <Routes>
+                    <Route path="/" exact element={<PageMain />}/>
+                    <Route path="/:word" element={<PageSingleWord />}/>
+                </Routes>
+            </main>
         </BrowserRouter>
     );
 };
