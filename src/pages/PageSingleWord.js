@@ -2,6 +2,9 @@ import { APP_TITLE, API_KEY_DICTIONARY, API_KEY_THESAURUS } from '../globals/Glo
 import { useEffect, useState, useRef } from 'react';
 import { useParams } from "react-router-dom";
 
+//Components
+import Synonyms from '../components/Synonyms';
+
 function PageSingleWord() {
 
     const { word } = useParams();
@@ -32,16 +35,11 @@ function PageSingleWord() {
         fetchWordThesData();
         fetchWordDictData();
     }, []);
-    
-
-            console.log(wordThesData);
-
+            
     return(
         <>
             <h2>{word}</h2>
-            <section className='synonym-section'>
-
-            </section>
+            <Synonyms synonymData={wordThesData}/>
         </>
     );
 };
