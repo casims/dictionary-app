@@ -13,8 +13,8 @@ function PageSingleWord() {
         document.title = `${APP_TITLE} - ${word}`;
     }, []);
 
-    const [wordThesData, setWordThesData] = useState(false);
-    const [wordDictData, setWordDictData] = useState(false);
+    const [wordThesData, setWordThesData] = useState([]);
+    const [wordDictData, setWordDictData] = useState([]);
     const dataFetched = useRef(false);
 
     const fetchWordThesData = async () => {
@@ -35,7 +35,7 @@ function PageSingleWord() {
         fetchWordThesData();
         fetchWordDictData();
     }, []);
-            
+   
     return(
         <>
             <h2>{word}</h2>
