@@ -14,27 +14,24 @@ function PageSingleWord() {
     }, []);
 
     const [wordThesData, setWordThesData] = useState([]);
-    const [wordDictData, setWordDictData] = useState([]);
-    const dataFetched = useRef(false);
-
-    const fetchWordThesData = async () => {
-        const resThesaurus = await fetch(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${API_KEY_THESAURUS}`);
-        const capturedResThesaurus = await resThesaurus.json();
-        setWordThesData(capturedResThesaurus);
-    };
-
-    const fetchWordDictData = async () => {
-        const resDictionary = await fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${API_KEY_DICTIONARY}`);
-        const capturedResDictionary = await resDictionary.json();
-        setWordDictData(capturedResDictionary);
-    };
-
     useEffect(() => {
-        if (dataFetched.current) return;
-        dataFetched.current = true;
+        const fetchWordThesData = async () => {
+            const resThesaurus = await fetch(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${API_KEY_THESAURUS}`);
+            const capturedResThesaurus = await resThesaurus.json();
+            setWordThesData(capturedResThesaurus);
+        };
         fetchWordThesData();
+    }, [word]);
+
+    const [wordDictData, setWordDictData] = useState([]);
+    useEffect(() => {
+        const fetchWordDictData = async () => {
+            const resDictionary = await fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${API_KEY_DICTIONARY}`);
+            const capturedResDictionary = await resDictionary.json();
+            setWordDictData(capturedResDictionary);
+        };
         fetchWordDictData();
-    }, []);
+    }, [word]);
    
     return(
         <>
