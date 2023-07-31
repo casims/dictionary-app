@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 
 //Components
-import Synonyms from '../components/Synonyms';
+import Thesaurus from '../components/Thesaurus';
+import Dictionary from '../components/Dictionary';
 
 function PageSingleWord() {
 
@@ -36,7 +37,8 @@ function PageSingleWord() {
     return(
         <>
             <h2>{word}</h2>
-            <Synonyms synonymData={wordThesData}/>
+            <Thesaurus thesaurusData={wordThesData}/>
+            <Dictionary dictionaryData={wordDictData}/>
         </>
     );
 };
