@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function SynDefSubSection({singleSubDefinition, word}) {
+function ThesDefSubSection({singleSubDefinition, word}) {
 
     let synonymArray = [];
 
@@ -26,4 +26,4 @@ function SynDefSubSection({singleSubDefinition, word}) {
     )
 };
 
-export default SynDefSubSection;
+export default ThesDefSubSection;
