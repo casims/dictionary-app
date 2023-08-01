@@ -12,7 +12,9 @@ function AppRouter() {
             <main>
                 <Routes>
                     <Route path="/" exact element={<PageMain />}/>
-                    <Route path="/:word" element={<PageSingleWord />}/>
+                    <Route path="/word/:word" element={<PageSingleWord />}/>
+                    <Route path="/favorites" />
+                    <Route path="/about" />
                 </Routes>
             </main>
         </BrowserRouter>

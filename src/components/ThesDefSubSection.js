@@ -20,7 +20,7 @@ function ThesDefSubSection({singleSubDefinition, word}) {
         <section>
             <p>{word} as in {singleSubDefinition[0][1].dt[0][1]}</p>
             <ul>
-                {synonymArray.map(singleSynonym => <li><Link to={`/${singleSynonym.wd}`}>{singleSynonym.wd}</Link></li>)}
+                {synonymArray.map(singleSynonym => <li><Link to={`/word/${singleSynonym.wd}`}>{singleSynonym.wd}</Link></li>)}
             </ul>
         </section>
     )
