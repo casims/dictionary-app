@@ -1,7 +1,10 @@
+import SearchBar from "../components/SearchBar";
+
 function PageMain() {
+
     return(
         <section>
-            <p>test</p>
+            <SearchBar/>
         </section>
     );
 };

@@ -13,14 +13,14 @@ function AppRouter() {
     return (
         <BrowserRouter>
             <Header/>
-            <main>
-                <Routes>
-                    <Route path="/" exact element={<PageMain />}/>
-                    <Route path="/word/:word" element={<PageSingleWord />}/>
-                    <Route path="/favorites" />
-                    <Route path="/about" />
-                </Routes>
-            </main>
+                <main>
+                    <Routes>
+                        <Route path="/" exact element={<PageMain />}/>
+                        <Route path="/word/:word" element={<PageSingleWord />}/>
+                        <Route path="/favorites" />
+                        <Route path="/about" />
+                    </Routes>
+                </main>
         </BrowserRouter>
     );
 };
