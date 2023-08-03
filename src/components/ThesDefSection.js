@@ -6,8 +6,10 @@ function ThesDefSection({singleDefinition}) {
 
     return(
         <section>
-            <h3>{singleDefinition.hwi.hw}</h3>
-            <p>&#40;{singleDefinition.fl}&#41;</p>
+            <section className="word-thes-information">
+                <h3>{singleDefinition.hwi.hw}</h3>
+                <p>&#40;{singleDefinition.fl}&#41;</p>
+            </section>
                 {subDefinitions.map(singleSubDefinition => <ThesDefSubSection singleSubDefinition={singleSubDefinition} word={singleDefinition.hwi.hw}/>)}
         </section>
     )
