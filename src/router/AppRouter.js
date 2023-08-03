@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //Components
 import Header from '../components/Header';
+import Footer from "../components/Footer";
 
 //Pages
 import PageMain from '../pages/PageMain';
@@ -21,6 +22,7 @@ function AppRouter() {
                         <Route path="/about" />
                     </Routes>
                 </main>
+            <Footer/>
         </BrowserRouter>
     );
 };
