@@ -4,7 +4,7 @@ function Dictionary({dictionaryData}) {
 
     return (
         <section className="dictionary-section">
-            {dictionaryData.map(singleDefinition => <DictDefSection singleDefinition={singleDefinition}/>)}
+            {dictionaryData.map((singleDefinition, index) => <DictDefSection singleDefinition={singleDefinition} key={index}/>)}
         </section>
     )
 };

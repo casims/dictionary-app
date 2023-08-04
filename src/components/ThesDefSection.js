@@ -10,7 +10,7 @@ function ThesDefSection({singleDefinition}) {
                 <h3>{singleDefinition.hwi.hw}</h3>
                 <p>&#40;{singleDefinition.fl}&#41;</p>
             </section>
-                {subDefinitions.map(singleSubDefinition => <ThesDefSubSection singleSubDefinition={singleSubDefinition} word={singleDefinition.hwi.hw}/>)}
+                {subDefinitions.map((singleSubDefinition, index) => <ThesDefSubSection singleSubDefinition={singleSubDefinition} word={singleDefinition.hwi.hw} key={index}/>)}
         </section>
     )
 };

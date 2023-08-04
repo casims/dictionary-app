@@ -4,7 +4,7 @@ function Thesaurus({thesaurusData}) {
 
     return (
         <section className="thesaurus-section">
-            {thesaurusData.map(singleDefinition => <ThesDefSection singleDefinition={singleDefinition}/>)}
+            {thesaurusData.map((singleDefinition, index) => <ThesDefSection singleDefinition={singleDefinition} key={index}/>)}
         </section>
     )
 };

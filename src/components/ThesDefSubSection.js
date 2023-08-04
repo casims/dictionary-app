@@ -20,7 +20,10 @@ function ThesDefSubSection({singleSubDefinition, word}) {
         <section className="word-thes-synonyms">
             <p>{word} as in {singleSubDefinition[0][1].dt[0][1]}</p>
             <ul>
-                {synonymArray.map(singleSynonym => <li><Link to={`/word/${singleSynonym.wd}`}>{singleSynonym.wd}</Link></li>)}
+                {synonymArray.map((singleSynonym, index) => 
+                    <li key={index}>
+                        <Link to={`/word/${singleSynonym.wd}`}>{singleSynonym.wd}</Link>
+                    </li>)}
             </ul>
         </section>
     )
