@@ -7,7 +7,7 @@ function Header() {
             <nav>
                 <ul>
                     <li>
-                        <NavLink to='/favorites'>Favorites</NavLink>
+                        <NavLink to='/bookmarks'>Bookmarks</NavLink>
                     </li>
                     <li>
                         <NavLink to='/about'>About</NavLink>

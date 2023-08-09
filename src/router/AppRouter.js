@@ -18,7 +18,7 @@ function AppRouter() {
                     <Routes>
                         <Route path="/" exact element={<PageMain />}/>
                         <Route path="/word/:word" element={<PageSingleWord />}/>
-                        <Route path="/favorites" />
+                        <Route path="/bookmarks" />
                         <Route path="/about" />
                     </Routes>
                 </main>
