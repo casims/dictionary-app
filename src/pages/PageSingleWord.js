@@ -1,10 +1,16 @@
 import { APP_TITLE, API_KEY_DICTIONARY, API_KEY_THESAURUS } from '../globals/Globals';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 //Components
 import Thesaurus from '../components/Thesaurus';
 import Dictionary from '../components/Dictionary';
+import BookmarkButton from '../components/BookmarkButton';
+
+//Utilities
+import isBookmarked from '../utilities/isBookmarked';
+import { addBookmark, deleteBookmark } from '../features/bookmarks/bookmarksSlice';
 
 function PageSingleWord() {
 
@@ -33,10 +39,31 @@ function PageSingleWord() {
         };
         fetchWordDictData();
     }, [word]);
+
+    function handleBookmarkClick(addToBookmarks, word) {
+        if(addToBookmarks === true) {
+            dispatch(addBookmark(word));
+        } else {
+            dispatch(deleteBookmark(word));
+        };
+    };
+
+    const bookmarks = useSelector((state) => state.bookmarks.items);
+
+    let isBookmarked = isBookmarked(bookmarks, null, word);
    
     return(
         <>
-            <h2>{word}</h2>
+            <div className='word-header'>
+                <h2>{word}</h2>
+                <div className='bookmark-button-container'>
+                {isBookmarked ?
+                    <BookmarkButton word={word} remove={true} handleBookmarkClick={handleBookmarkClick} /> :
+                    <BookmarkButton word={word} handleBookmarkClick={handleBookmarkClick} />
+                }
+                </div>
+                <BookmarkButton />
+            </div>
             <Thesaurus thesaurusData={wordThesData}/>
             <Dictionary dictionaryData={wordDictData}/>
         </>
