@@ -6,15 +6,16 @@ import { useSelector } from "react-redux";
 //Components
 import Thesaurus from '../components/Thesaurus';
 import Dictionary from '../components/Dictionary';
-import BookmarkButton from '../components/BookmarkButton';
 
 //Utilities
 import isBookmarked from '../utilities/isBookmarked';
-import { addBookmark, deleteBookmark } from '../features/bookmarks/bookmarksSlice';
+import WordHeader from '../components/WordHeader';
 
 function PageSingleWord() {
 
     const { word } = useParams();
+
+    const bookmarks = useSelector((state) => state.bookmarks.items);
 
     useEffect(() => {
         document.title = `${APP_TITLE} - ${word}`;
@@ -39,31 +40,10 @@ function PageSingleWord() {
         };
         fetchWordDictData();
     }, [word]);
-
-    function handleBookmarkClick(addToBookmarks, word) {
-        if(addToBookmarks === true) {
-            dispatch(addBookmark(word));
-        } else {
-            dispatch(deleteBookmark(word));
-        };
-    };
-
-    const bookmarks = useSelector((state) => state.bookmarks.items);
-
-    let isBookmarked = isBookmarked(bookmarks, null, word);
    
     return(
         <>
-            <div className='word-header'>
-                <h2>{word}</h2>
-                <div className='bookmark-button-container'>
-                {isBookmarked ?
-                    <BookmarkButton word={word} remove={true} handleBookmarkClick={handleBookmarkClick} /> :
-                    <BookmarkButton word={word} handleBookmarkClick={handleBookmarkClick} />
-                }
-                </div>
-                <BookmarkButton />
-            </div>
+            <WordHeader word={word} bookmarkCheck={isBookmarked(bookmarks, null, word)}/>
             <Thesaurus thesaurusData={wordThesData}/>
             <Dictionary dictionaryData={wordDictData}/>
         </>

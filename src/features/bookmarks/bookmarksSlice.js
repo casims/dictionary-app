@@ -15,8 +15,8 @@ const initialState = {
     items: getBookmarks()
 };
 
-function getIndex(item, array) {
-    return array.findIndex(arrayItem => arrayItem.id === item.id);
+function getIndex(item, arr) {
+    return arr.findIndex(arrItem => arrItem.id === item.id);
 };
 
 export const bookmarksSlice = createSlice({
