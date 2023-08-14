@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 //Pages
 import PageMain from '../pages/PageMain';
 import PageSingleWord from '../pages/PageSingleWord';
+import PageAbout from "../pages/PageAbout";
 
 function AppRouter() {
 
@@ -19,7 +20,7 @@ function AppRouter() {
                         <Route path="/" exact element={<PageMain />}/>
                         <Route path="/word/:word" element={<PageSingleWord />}/>
                         <Route path="/bookmarks" />
-                        <Route path="/about" />
+                        <Route path="/about" element={<PageAbout />}/>
                     </Routes>
                 </main>
             <Footer/>
