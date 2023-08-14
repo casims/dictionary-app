@@ -1,6 +1,11 @@
 import mwlogo from "../assets/MWLogo.png";
+import { APP_TITLE } from "../globals/Globals";
 
 function PageAbout() {
+
+    useEffect(() => {
+        document.title = `${APP_TITLE} - About`;
+      }, []);
 
     return(
         <section>
