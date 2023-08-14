@@ -43,7 +43,7 @@ function PageSingleWord() {
    
     return(
         <>
-            <WordHeader word={word} bookmarkCheck={isBookmarked(bookmarks, null, word)}/>
+            <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, null, word)}/>
             <Thesaurus thesaurusData={wordThesData}/>
             <Dictionary dictionaryData={wordDictData}/>
         </>

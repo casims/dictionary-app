@@ -1,4 +1,4 @@
-function isBookmarked(array, path, id) {
+function isBookmarked(array, path, word) {
 
     if (path === '/bookmarks') {
         return true;
@@ -8,7 +8,7 @@ function isBookmarked(array, path, id) {
         return false;
     };
 
-    return array.some((object) => object.id === id);
+    return array.some((object) => object === word);
 
 };
 
