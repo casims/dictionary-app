@@ -18,8 +18,6 @@ function WordHeader({ word, isBookmarked }) {
         };
     };
 
-    console.log(isBookmarked);
-
     return(
         <>
             <h2>{word}</h2>
