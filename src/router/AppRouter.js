@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import PageMain from '../pages/PageMain';
 import PageSingleWord from '../pages/PageSingleWord';
 import PageAbout from "../pages/PageAbout";
+import PageBookmarks from "../pages/PageBookmarks";
 
 function AppRouter() {
 
@@ -19,7 +20,7 @@ function AppRouter() {
                     <Routes>
                         <Route path="/" exact element={<PageMain />}/>
                         <Route path="/word/:word" element={<PageSingleWord />}/>
-                        <Route path="/bookmarks" />
+                        <Route path="/bookmarks" element={<PageBookmarks />}/>
                         <Route path="/about" element={<PageAbout />}/>
                     </Routes>
                 </main>
