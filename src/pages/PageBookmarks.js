@@ -13,17 +13,27 @@ function PageBookmarks() {
   const bookmarks = useSelector((state) => state.bookmarks.items);
 
   return(
-    <section>
-      <ul>
-        {bookmarks.map((bookmark) => (
-          <BookmarkItem
-            key={bookmark}
-            word={bookmark}
-            isBookmarked={isBookmarked}
-          />
-        ))}
-      </ul>
-    </section>
+    <>
+      {bookmarks.length < 1 ? (
+        <section className="info-card">
+          <p>
+            Sorry, but you currently have no bookmarks.
+          </p>
+        </section>
+      ) : (
+        <section>
+        <ul>
+          {bookmarks.map((bookmark) => (
+            <BookmarkItem
+              key={bookmark}
+              word={bookmark}
+              isBookmarked={isBookmarked}
+            />
+          ))}
+        </ul>
+      </section>
+      )};
+    </>
   );
 };
 
