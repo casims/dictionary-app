@@ -1,12 +1,30 @@
+import { APP_TITLE } from "../globals/Globals";
+import { useSelector } from "react-redux";
+import BookmarkItem from "../components/BookmarkItem";
+import isBookmarked from "../utilities/isBookmarked";
+import { useEffect } from "react";
+
 function PageBookmarks() {
 
-    useEffect(() => {
-        document.title = `${APP_TITLE} - Bookmarks`;
-      }, []);
+  useEffect(() => {
+    document.title = `${APP_TITLE} - Bookmarks`;
+  }, []);
 
-    return(
+  const bookmarks = useSelector((state) => state.bookmarks.items);
 
-    );
+  return(
+    <section>
+      <ul>
+        {bookmarks.map((bookmark) => (
+          <BookmarkItem
+            key={bookmark}
+            word={bookmark}
+            isBookmarked={isBookmarked}
+          />
+        ))}
+      </ul>
+    </section>
+  );
 };
 
 export default PageBookmarks;
