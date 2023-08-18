@@ -9,7 +9,7 @@ function PageMain() {
       }, []);
 
     return(
-        <section>
+        <section className="main-search-container">
             <SearchBar/>
         </section>
     );

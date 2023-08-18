@@ -4,7 +4,7 @@ function DictDefSection({singleDefinition}) {
     const wordDefinitions = singleDefinition.shortdef;
 
     return(
-        <section>
+        <section className="single-word-dict-section">
             <section className="word-dict-information">
                 <h3>{singleDefinition.hwi.hw}</h3>
                 <p>&#40;{singleDefinition.fl}&#41;</p>
