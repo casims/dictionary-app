@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 function Header() {
     return (
@@ -11,6 +12,9 @@ function Header() {
                     </li>
                     <li>
                         <NavLink to='/about'>About</NavLink>
+                    </li>
+                    <li>
+                        <SearchBar />
                     </li>
                 </ul>
             </nav>
