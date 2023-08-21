@@ -21,7 +21,7 @@ function WordHeader({ word, isBookmarked }) {
     return(
         <>
             <h2>{word}</h2>
-            <div className='bookmark-button-container'>
+            <div className='bookmark-button-wrapper'>
                 {isBookmarked ?
                     <BookmarkButton word={word} remove={true} handleBookmarkClick={handleBookmarkClick} /> :
                     <BookmarkButton word={word} handleBookmarkClick={handleBookmarkClick} />
