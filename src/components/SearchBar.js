@@ -17,7 +17,7 @@ function SearchBar() {
 
     return(
         <form onSubmit={handleSubmit}>
-            <label htmlFor="word">Search for Word:</label>
+            <label htmlFor="word">Search:</label>
             <input type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
             <input type="submit" value="Submit"/>
         </form>
