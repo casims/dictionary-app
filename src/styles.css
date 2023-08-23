@@ -11,7 +11,7 @@
 
 /* TYPOGRAPHY */
 body {
-  background-color: var(--rd_lightblack);
+  background-color: var(--rd_black);
   color: var(--rd_white);
 }
 
@@ -28,8 +28,13 @@ h1 a {
   font-size: 1.6rem;
 }
 
+nav ul li a {
+  font-size: 1.3rem;
+}
+
 a {
   color: var(--rd_white);
+  text-decoration: none;
 }
 
 header nav ul li a {
@@ -65,18 +70,48 @@ footer {
 }
 
 /* HEADER */
-header {
-  background-color: var(--rd_black);
-}
-
 header h1 {
   margin: 0;
+}
+
+header nav {
+  margin: 0 calc(50% - 50vw);
 }
 
 header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+header nav ul li {
+  border-top: 2px solid var(--rd_white);
+}
+
+header nav div {
+  border-top: 2px solid var(--rd_white);
+  border-bottom: 2px solid var(--rd_white);
+}
+
+header nav ul li, header nav div {
+  padding: 0 1rem;
+}
+
+header nav ul li a {
+  padding: .2rem 0;
+  display: block;
+}
+
+header nav ul li:hover {
+  background-color: var(--rd_lightblack);
+}
+
+header nav div form {
+  text-align: end;
+}
+
+header nav div form input {
+  margin-top: .4rem;
 }
 
 /* FOOTER */
@@ -86,17 +121,19 @@ footer p {
 
 /* SEARCHBAR */
 .search-input {
-  background-color: var(--rd_lightblack);
+  background-color: var(--rd_black);
   border: 2px solid var(--rd_white);
   border-radius: 4px;
   color: var(--rd_white);
   padding: .4rem;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
 }
 
 .search-submit {
   background-color: var(--rd_white);
   padding: .4rem;
-  border: 2px solid var(--rd_white);
   border-radius: 4px;
-  margin-left: .4rem;
+  border: none;
 }

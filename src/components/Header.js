@@ -13,10 +13,10 @@ function Header() {
                     <li>
                         <NavLink to='/about'>About</NavLink>
                     </li>
-                    <li className='nav-search-wrapper'>
-                        <SearchBar />
-                    </li>
                 </ul>
+                <div className='nav-search-wrapper'>
+                        <SearchBar />
+                </div>
             </nav>
         </header>
     )
