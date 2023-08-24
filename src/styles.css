@@ -70,48 +70,54 @@ footer {
 }
 
 /* HEADER */
-header h1 {
+.desktop-nav h1 {
   margin: 0;
+  padding: .6rem 0;
 }
 
-header nav {
+.desktop-nav h1 a {
+  padding: .6rem 0;
+}
+
+.mobile-nav {
   margin: 0 calc(50% - 50vw);
 }
 
-header nav ul {
+.mobile-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-header nav ul li {
+.mobile-nav ul li {
   border-top: 2px solid var(--rd_white);
 }
 
-header nav div {
+.mobile-nav div {
   border-top: 2px solid var(--rd_white);
   border-bottom: 2px solid var(--rd_white);
+  padding: .4rem 1rem;
 }
 
-header nav ul li, header nav div {
+.mobile-nav ul li {
   padding: 0 1rem;
 }
 
-header nav ul li a {
+.mobile-nav ul li:hover {
+  background-color: var(--rd_lightblack);
+}
+
+.mobile-nav ul li a {
   padding: .2rem 0;
   display: block;
 }
 
-header nav ul li:hover {
-  background-color: var(--rd_lightblack);
-}
-
-header nav div form {
+.mobile-nav div form {
   text-align: end;
 }
 
-header nav div form input {
-  margin-top: .4rem;
+.mobile-nav div form .search-input {
+  margin-bottom: .4rem;
 }
 
 /* FOOTER */
