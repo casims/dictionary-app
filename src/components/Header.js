@@ -1,11 +1,17 @@
 import { Link, NavLink } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import MenuButton from '../assets/menu_icon.svg'
 
 function Header() {
     return (
         <header>
-            <h1><Link to='/'>React Dictionary</Link></h1>
-            <nav>
+            <nav className='desktop-nav'>
+                <h1><Link to='/'>React Dictionary</Link></h1>
+                <button>
+                    <img className="menu-button" src={MenuButton} alt=''/>
+                </button>
+            </nav>
+            <nav className='mobile-nav'>
                 <ul>
                     <li>
                         <NavLink to='/bookmarks'>Bookmarks</NavLink>
