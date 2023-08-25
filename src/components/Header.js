@@ -7,6 +7,10 @@ function Header() {
         <header>
             <nav className='desktop-nav'>
                 <h1><Link to='/'>React Dictionary</Link></h1>
+                    <div>
+                        <NavLink to='/bookmarks'>Bookmarks</NavLink>
+                        <NavLink to='/about'>About</NavLink>
+                    </div>
                 <button>
                     <img className="menu-button" src={MenuButton} alt=''/>
                 </button>
