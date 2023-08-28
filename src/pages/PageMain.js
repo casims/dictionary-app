@@ -6,12 +6,18 @@ function PageMain() {
 
     useEffect(() => {
         document.title = `${APP_TITLE}`;
-      }, []);
+    }, []);
 
     return(
-        <section className="main-search-wrapper">
-            <SearchBar/>
-        </section>
+        <div className="page-wrapper">
+            <section className="content-card">
+                <h2>Welcome</h2>
+                <p>Search for a word below to find definitions and synonyms:</p>
+                <section className="main-search-wrapper">
+                    <SearchBar/>
+                </section>
+            </section>
+        </div>
     );
 };
 
