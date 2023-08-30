@@ -9,7 +9,7 @@ function PageMain() {
     }, []);
 
     return(
-        <section className="content-card">
+        <section className="content-card main-card">
             <h2>Welcome</h2>
             <p>Search for a word below to find definitions and synonyms:</p>
             <section className="main-search-wrapper">
