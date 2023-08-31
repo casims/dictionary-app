@@ -24,6 +24,10 @@ p, a, label {
   font-family: 'Noto Sans', sans-serif;
 }
 
+p {
+  font-size: .9rem;
+}
+
 h1 a {
   font-size: 1.6rem;
 }
@@ -203,4 +207,32 @@ footer p {
 
 .main-card {
   margin-top: 10rem;
+}
+
+/* WORD HEADER */
+.word-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: .4rem 0;
+  border-bottom: 2px solid var(--rd_white);
+}
+
+.word-header h2 {
+  margin: 0;
+}
+
+.word-header button {
+  background-color: transparent;
+  border: none;
+}
+
+.word-header button img {
+  margin: auto;
+  height: 2rem;
+  width: 2rem;
+}
+
+.word-header button .unhovered {
+  padding-right: 2.63px;
 }
