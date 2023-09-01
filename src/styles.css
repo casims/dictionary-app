@@ -220,6 +220,7 @@ footer p {
 
 .word-header h2 {
   margin: 0;
+  padding-left: .7rem;
 }
 
 .word-header button {
