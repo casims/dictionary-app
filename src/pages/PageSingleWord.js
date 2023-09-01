@@ -44,8 +44,8 @@ function PageSingleWord() {
     return(
         <>
             <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, null, word)}/>
-            <Thesaurus thesaurusData={wordThesData}/>
             <Dictionary dictionaryData={wordDictData}/>
+            <Thesaurus thesaurusData={wordThesData}/>
         </>
     );
 };

@@ -7,16 +7,17 @@ function DictDefSection({singleDefinition}) {
         <section className="single-word-dict-section">
             <section className="word-dict-information">
                 <h3>{singleDefinition.hwi.hw}</h3>
-                <p>&#40;{singleDefinition.fl}&#41;</p>
-                {singleDefinition.meta.offensive === true && <p>This word is considered offensive.</p>}
+                {singleDefinition.fl && <p>&#40;{singleDefinition.fl}&#41;</p>}
             </section>
+            {singleDefinition.meta.offensive === true && <section className="offensive-sect"><p>This word is considered offensive.</p></section>}
             <section className="word-dict-stems">
-                <ul>
+                <p>{wordStems.join('; ')}</p>
+                {/* <ul>
                     {wordStems.map((singleWordStem, index) => 
                     <li key={index}>
                         <p>{singleWordStem}</p>
                     </li>)}
-                </ul>
+                </ul> */}
             </section>
             <section className="word-dict-definitions">
                 <ul>
