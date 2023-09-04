@@ -15,13 +15,13 @@ function PageBookmarks() {
   return(
     <>
       {bookmarks.length < 1 ? (
-        <section className="info-card">
+        <section className="content-card bookmarks-card">
           <p>
             Sorry, but you currently have no bookmarks.
           </p>
         </section>
       ) : (
-        <section>
+        <section className="bookmarks-section">
         <ul>
           {bookmarks.map((bookmark) => (
             <BookmarkItem
@@ -32,7 +32,7 @@ function PageBookmarks() {
           ))}
         </ul>
       </section>
-      )};
+      )}
     </>
   );
 };

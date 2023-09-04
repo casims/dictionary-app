@@ -50,6 +50,11 @@ header nav ul li a {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.bookmarks-section ul li a {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.4rem;
+}
+
 /* GENERAL LAYOUT */
 body {
   margin: 0;
@@ -193,21 +198,28 @@ footer p {
 
 .content-card h2 {
   position: relative;
-  margin: 0;
+  margin: 0 0 1.5rem;
 }
 
 .content-card h2::after {
   background-color: var(--rd_white);
   content: "";
   position: absolute;
-  bottom: -.4rem;
+  bottom: -.8rem;
   height: .15rem;
   left: -.4rem;
   right: -.4rem;
 }
 
-.main-card {
+.main-card, .bookmarks-card {
   margin-top: 10rem;
+}
+
+.about-card img {
+  height: 6rem;
+  width: 6rem;
+  margin: 0 auto;
+  display: block;
 }
 
 /* WORD HEADER */
@@ -341,4 +353,41 @@ footer p {
 
 .word-thes-synonyms ul li a:hover {
   background-color: var(--rd_darkwhite);
+}
+
+/* BOOKMARKS */
+
+.bookmarks-section ul {
+  padding: 0;
+  list-style: none;
+}
+
+.bookmarks-section ul li {
+  background-color: var(--rd_lightblack);
+  border-radius: 5px;
+  margin: 1rem 0 0;
+  padding: .8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookmarks-section ul li a {
+  flex-grow: 1;
+  padding-left: .7rem;
+}
+
+.bookmarks-section ul li button {
+  background-color: transparent;
+  border: none;
+}
+
+.bookmarks-section ul li button img {
+  margin: auto;
+  height: 1.75rem;
+  width: 1.75rem;
+}
+
+.bookmarks-section ul li button .unhovered {
+  padding-right: 2.63px;
 }
