@@ -11,12 +11,10 @@ function BookmarkButton({ word, remove, handleBookmarkClick }) {
 
     function handleAddBookmark() {
         handleBookmarkClick(true, word);
-        console.log('Handle Add Bookmark');
     };
 
     function handleRemoveBookmark() {
         handleBookmarkClick(false, word);
-        console.log('Handle Remove Bookmark');
     };
 
     return (
