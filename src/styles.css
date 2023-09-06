@@ -85,6 +85,20 @@ footer {
   text-align: center;
 }
 
+@media (min-width: 700px) {
+  header {
+    padding: 0 2rem;
+  }
+
+  .mobile-nav .nav-search-wrapper {
+    padding: .4rem 2rem;
+  }
+
+  main {
+    padding: 0 4rem;
+  }
+}
+
 /* HEADER */
 header {
   border-bottom: 2px solid var(--rd_white);
