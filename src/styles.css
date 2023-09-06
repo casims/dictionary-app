@@ -289,6 +289,16 @@ footer p {
   display: block;
 }
 
+@media (min-width: 700px) {
+  .content-card {
+    padding: 1.6rem;
+  }
+
+  .about-card {
+    margin-top: 6rem;
+  }
+}
+
 /* WORD HEADER */
 .word-header {
   display: flex;
@@ -367,6 +377,12 @@ footer p {
   font-size: .8rem;
 }
 
+@media (min-width: 700px) {
+  .single-word-dict-section {
+    padding: 1.6rem;
+  }
+}
+
 /* SYNONYMS SECTION */
 
 .single-word-thes-section {
@@ -420,6 +436,12 @@ footer p {
 
 .word-thes-synonyms ul li a:hover {
   background-color: var(--rd_darkwhite);
+}
+
+@media (min-width: 700px) {
+  .single-word-thes-section {
+    padding: 1.6rem;
+  }
 }
 
 /* BOOKMARKS */
