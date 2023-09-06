@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import MenuButton from '../assets/menu_icon.svg';
+import SearchButton from '../assets/search_icon.svg';
 
 function Header() {
 
@@ -13,7 +14,11 @@ function Header() {
 
     useEffect(() => {
         if (menuExpanded) {
-            document.getElementById('dropdown-menu').style.height = '10rem';
+            if (window.matchMedia('(min-width: 700px)')) {
+                document.getElementById('dropdown-menu').style.height = '3.05rem';
+            } else {
+                document.getElementById('dropdown-menu').style.height = '10rem';
+            }
         } else {
             document.getElementById('dropdown-menu').style.height = 0;
         }
@@ -29,6 +34,7 @@ function Header() {
                     </div>
                 <button onClick={toggleMenu}>
                     <img className="menu-button" src={MenuButton} alt=''/>
+                    <img className="search-button" src={SearchButton} alt=''/>
                 </button>
             </nav>
             <nav className='mobile-nav' id='dropdown-menu'>

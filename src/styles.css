@@ -46,6 +46,11 @@ header nav ul li a {
   font-family: 'Noto Serif', serif;
 }
 
+header .desktop-nav div a {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.4rem;
+}
+
 .search-input, .search-submit {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -146,6 +151,54 @@ header {
 .mobile-nav ul li a {
   padding: .2rem 0;
   display: block;
+}
+
+.search-button {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .search-button {
+    display: initial;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .desktop-nav h1 {
+    flex-grow: 1;
+  }
+
+  .desktop-nav div {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  .desktop-nav div a {
+    padding: .4rem .6rem;
+  }
+
+  .mobile-nav ul {
+    display: none;
+  }
+
+  .nav-search-wrapper form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .nav-search-wrapper form .search-input {
+    width: initial;
+    flex-grow: 1;
+    margin-right: .4rem;
+  }
+
+  .nav-search-wrapper form .search-submit {
+    height: 2.15rem;
+    width: 8rem;
+  }
 }
 
 /* FOOTER */
