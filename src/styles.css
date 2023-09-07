@@ -69,6 +69,10 @@ header, main {
   padding: 0 1rem;
 }
 
+.mobile-nav div {
+  padding: .4rem 1rem;
+}
+
 #root {
   min-height: 100vh;
   display: flex;
@@ -90,12 +94,19 @@ footer {
     padding: 0 2rem;
   }
 
-  .mobile-nav .nav-search-wrapper {
-    padding: .4rem 4rem;
+  .mobile-nav div {
+    padding: .4rem 2rem;
   }
 
   main {
-    padding: 0 4rem;
+    width: 40rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1300px) {
+  main {
+    width: 60rem;
   }
 }
 
@@ -151,7 +162,6 @@ header {
 
 .mobile-nav div {
   border-top: 2px solid var(--rd_white);
-  padding: .4rem 1rem;
 }
 
 .mobile-nav ul li {
@@ -253,6 +263,18 @@ footer p {
 
 .main-card form .search-input {
   margin-bottom: .4rem;
+}
+
+@media(min-width: 700px) {
+  .search-submit, .nav-search-wrapper form .search-submit {
+    width: 10rem;
+  }
+}
+
+@media(min-width: 1300px) {
+  .search-submit, .nav-search-wrapper form .search-submit {
+    width: 14rem;
+  }
 }
 
 /* CONTENT CARDS */
