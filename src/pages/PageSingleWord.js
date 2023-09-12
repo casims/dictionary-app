@@ -40,12 +40,31 @@ function PageSingleWord() {
         };
         fetchWordDictData();
     }, [word]);
-   
+
+    const [selectedTab, setSelectedTab] = useState('dict');
+    useEffect(() => {
+        if (selectedTab === 'dict') {
+            document.getElementById('dict-button').className = 'active';
+            document.getElementById('thes-button').className = '';
+        } else if (selectedTab === 'thes') {
+            document.getElementById('thes-button').className = 'active';
+            document.getElementById('dict-button').className = '';
+        }
+    }, [selectedTab])
+
+    function handleTabs(tab) {
+        setSelectedTab(tab);
+    };
+
     return(
         <>
             <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, null, word)}/>
-            <Dictionary dictionaryData={wordDictData}/>
-            <Thesaurus thesaurusData={wordThesData}/>
+            <div>
+                <button onClick={() => handleTabs('dict')} className='active' id='dict-button'>Defintions</button>
+                <button onClick={() => handleTabs('thes')} className='' id='thes-button'>Synonyms</button>
+            </div>
+            <Dictionary dictionaryData={wordDictData} activeTab={selectedTab}/>
+            <Thesaurus thesaurusData={wordThesData} activeTab={selectedTab}/>
         </>
     );
 };
