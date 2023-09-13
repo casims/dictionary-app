@@ -59,7 +59,7 @@ function PageSingleWord() {
     return(
         <>
             <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, null, word)}/>
-            <div>
+            <div className='tab-container'>
                 <button onClick={() => handleTabs('dict')} className='active' id='dict-button'>Defintions</button>
                 <button onClick={() => handleTabs('thes')} className='' id='thes-button'>Synonyms</button>
             </div>

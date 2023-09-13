@@ -55,6 +55,12 @@ header .desktop-nav div a {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.tab-container button {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--rd_white);
+}
+
 .bookmarks-section ul li a {
   font-family: 'Noto Serif', serif;
   font-size: 1.4rem;
@@ -348,6 +354,23 @@ footer p {
 
 .word-header button .unhovered {
   padding-right: 2.63px;
+}
+
+/* TABS */
+.tab-container button {
+  width: 50%;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: .4rem;
+}
+
+.tab-container button:hover {
+  background-color: var(--rd_lightblack);
+}
+
+.tab-container .active {
+  border-bottom: 3px solid var(--rd_white);
 }
 
 /* DICTIONARY SECTION */
