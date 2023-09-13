@@ -373,6 +373,10 @@ footer p {
   border-bottom: 3px solid var(--rd_white);
 }
 
+.hidden-section {
+  display: none;
+}
+
 /* DICTIONARY SECTION */
 .single-word-dict-section {
   background-color: var(--rd_lightblack);
