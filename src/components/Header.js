@@ -14,7 +14,7 @@ function Header() {
 
     useEffect(() => {
         if (menuExpanded) {
-            if (window.matchMedia('(min-width: 700px)')) {
+            if (window.matchMedia('(min-width: 700px)').matches) {
                 document.getElementById('dropdown-menu').style.height = '3.05rem';
             } else {
                 document.getElementById('dropdown-menu').style.height = '10rem';
