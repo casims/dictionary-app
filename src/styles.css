@@ -144,6 +144,7 @@ header {
   border: none;
   height: 3rem;
   margin: auto 0;
+  cursor: pointer;
 }
 
 .desktop-nav button img {
@@ -154,6 +155,7 @@ header {
   margin: 0 calc(50% - 50vw);
   height: 0;
   overflow: hidden;
+  transition: 0.2s height ease;
 }
 
 .mobile-nav ul {
@@ -253,6 +255,12 @@ footer p {
   padding: .4rem 1rem;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
+  transition: 0.2s background-color ease;
+}
+
+.search-submit:hover {
+  background-color: var(--rd_darkwhite);
 }
 
 .mobile-nav div form {
@@ -344,6 +352,7 @@ footer p {
 .word-header button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .word-header button img {
@@ -363,6 +372,8 @@ footer p {
   border: none;
   border-radius: 0;
   padding: .4rem;
+  cursor: pointer;
+  transition: 0.2s background-color ease;
 }
 
 .tab-container button:hover {
