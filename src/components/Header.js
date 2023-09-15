@@ -24,6 +24,12 @@ function Header() {
         }
     }, [menuExpanded]);
 
+    window.matchMedia('(min-width: 700px)').addEventListener('change', function() {
+        if (menuExpanded === true) {
+            setMenuExpanded(false);
+        }
+    })
+
     return (
         <header>
             <nav className='desktop-nav'>
