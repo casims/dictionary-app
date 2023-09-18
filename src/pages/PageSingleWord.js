@@ -46,11 +46,9 @@ function PageSingleWord() {
         if (selectedTab === 'dict') {
             document.getElementById('dict-button').className = 'active';
             document.getElementById('thes-button').className = '';
-            console.log(selectedTab);
         } else if (selectedTab === 'thes') {
             document.getElementById('thes-button').className = 'active';
             document.getElementById('dict-button').className = '';
-            console.log(selectedTab);
         }
     }, [selectedTab])
 
