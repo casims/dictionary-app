@@ -23,12 +23,6 @@ function DictDefSection({singleDefinition}) {
             {singleDefinition.meta.offensive === true && <section className="offensive-sect"><p>This word is considered offensive.</p></section>}
             <section className="word-dict-stems">
                 <p>{wordStems.join('; ')}</p>
-                {/* <ul>
-                    {wordStems.map((singleWordStem, index) => 
-                    <li key={index}>
-                        <p>{singleWordStem}</p>
-                    </li>)}
-                </ul> */}
             </section>
             <section className="word-dict-definitions">
                 <ul>
@@ -41,8 +35,6 @@ function DictDefSection({singleDefinition}) {
             <section className="word-dict-etymology">
                 {wordOrigin && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(wordOrigin)}}></p>}
                 {wordOriginDate && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(wordOriginDate)}}></p>}
-                {/* {singleDefinition.et && <p>{singleDefinition.et[0][1]}</p>}
-                {singleDefinition.date && <p>{singleDefinition.date}</p> } */}
             </section>
         </section>
     )
