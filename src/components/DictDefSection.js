@@ -1,7 +1,18 @@
+import textParser from "../utilities/textParser";
+import DOMPurify from "dompurify";
+
 function DictDefSection({singleDefinition}) {
 
     const wordStems = singleDefinition.meta.stems;
     const wordDefinitions = singleDefinition.shortdef;
+
+    if (singleDefinition.et) {
+        var wordOrigin = textParser(singleDefinition.et[0][1]);
+    };
+
+    if (singleDefinition.date) {
+        var wordOriginDate = textParser(singleDefinition.date, 'date');
+    };
 
     return(
         <section className="single-word-dict-section">
@@ -28,8 +39,10 @@ function DictDefSection({singleDefinition}) {
                 </ul>
             </section>
             <section className="word-dict-etymology">
-                {singleDefinition.et && <p>{singleDefinition.et[0][1]}</p>}
-                {singleDefinition.date && <p>{singleDefinition.date}</p> }
+                {wordOrigin && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(wordOrigin)}}></p>}
+                {wordOriginDate && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(wordOriginDate)}}></p>}
+                {/* {singleDefinition.et && <p>{singleDefinition.et[0][1]}</p>}
+                {singleDefinition.date && <p>{singleDefinition.date}</p> } */}
             </section>
         </section>
     )
