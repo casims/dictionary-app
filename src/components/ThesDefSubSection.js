@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import textParser from "../utilities/textParser";
 
 function ThesDefSubSection({singleSubDefinition, word}) {
 
@@ -16,9 +17,13 @@ function ThesDefSubSection({singleSubDefinition, word}) {
         );
     };
 
+    if (singleSubDefinition[0][1].dt[0][1]) {
+        var singleSynonymDef = textParser(singleSubDefinition[0][1].dt[0][1]);
+    };
+
     return(
         <section className="word-thes-synonyms">
-            <p>{word} as in {singleSubDefinition[0][1].dt[0][1]}</p>
+            <p>{word} as in <span dangerouslySetInnerHTML={{__html: singleSynonymDef}}></span></p>
             <ul>
                 {synonymArray.map((singleSynonym, index) => 
                     <li key={index}>

@@ -1,23 +1,31 @@
 import textParser from "../utilities/textParser";
-import DOMPurify from "dompurify";
+import linkParser from "../utilities/linkParser";
 
 function DictDefSection({singleDefinition}) {
+
+    const wordHeadWord = textParser(singleDefinition.hwi.hw, 'hw');
 
     const wordStems = singleDefinition.meta.stems;
     const wordDefinitions = singleDefinition.shortdef;
 
     if (singleDefinition.et) {
         var wordOrigin = textParser(singleDefinition.et[0][1]);
+        if (wordOrigin.includes('<a')) {
+            wordOrigin = linkParser(wordOrigin);
+        }
     };
 
     if (singleDefinition.date) {
         var wordOriginDate = textParser(singleDefinition.date, 'date');
+        if (wordOriginDate.includes('<a')) {
+            wordOriginDate= linkParser(wordOriginDate);
+        }
     };
 
     return(
         <section className="single-word-dict-section">
             <section className="word-dict-information">
-                <h3>{singleDefinition.hwi.hw}</h3>
+                <h3>{wordHeadWord}</h3>
                 {singleDefinition.fl && <p>&#40;{singleDefinition.fl}&#41;</p>}
             </section>
             {singleDefinition.meta.offensive === true && <section className="offensive-sect"><p>This word is considered offensive.</p></section>}
@@ -33,8 +41,8 @@ function DictDefSection({singleDefinition}) {
                 </ul>
             </section>
             <section className="word-dict-etymology">
-                {wordOrigin && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(wordOrigin)}}></p>}
-                {wordOriginDate && <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(wordOriginDate)}}></p>}
+                {wordOrigin && <p dangerouslySetInnerHTML={{__html: wordOrigin}}></p>}
+                {wordOriginDate && <p dangerouslySetInnerHTML={{__html: wordOriginDate}}></p>}
             </section>
         </section>
     )
