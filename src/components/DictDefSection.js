@@ -8,8 +8,16 @@ function DictDefSection({singleDefinition}) {
     const wordStems = singleDefinition.meta.stems;
     const wordDefinitions = singleDefinition.shortdef;
 
+    if (singleDefinition.fl) {
+        var wordLabel = textParser(singleDefinition.fl);
+        if (wordLabel.includes('<a')) {
+            wordLabel = linkParser(wordLabel)
+        }
+        wordLabel = `(${wordLabel})`;
+    };
+
     if (singleDefinition.et) {
-        var wordOrigin = textParser(singleDefinition.et[0][1]);
+        var wordOrigin = textParser(singleDefinition.et[0][1], 'et');
         if (wordOrigin.includes('<a')) {
             wordOrigin = linkParser(wordOrigin);
         }
@@ -26,7 +34,7 @@ function DictDefSection({singleDefinition}) {
         <section className="single-word-dict-section">
             <section className="word-dict-information">
                 <h3>{wordHeadWord}</h3>
-                {singleDefinition.fl && <p>&#40;{singleDefinition.fl}&#41;</p>}
+                {wordLabel && <p dangerouslySetInnerHTML={{__html: wordLabel}}></p>}
             </section>
             {singleDefinition.meta.offensive === true && <section className="offensive-sect"><p>This word is considered offensive.</p></section>}
             <section className="word-dict-stems">
