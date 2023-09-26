@@ -1,3 +1,7 @@
+// Documentation for tokens that are being targeted with this function: https://dictionaryapi.com/products/json#sec-2.tokens
+
+// Goal of function is to parse the text and find the tokens so they can be properly formatted for the website
+
 import DOMPurify from "dompurify";
 
 function textParser(text, type) {
@@ -11,9 +15,41 @@ function textParser(text, type) {
         text = text.replaceAll('*', '·');
     };
 
+    if (text.includes('{b}')) {
+        text = text.replaceAll('{b}', '<b>');
+        text = text.replaceAll('{/b}', '</b>');
+    };
+
+    if (text.includes('{bc}')) {
+        text = text.replaceAll('{bc}', '<b>:</b> ');
+    };
+
+    if (text.includes('{inf}')) {
+        text = text.replaceAll('{inf}', '<sub>');
+        text = text.replaceAll('{/inf}', '</sub>');
+    };
+
     if (text.includes('{it}')) {
         text = text.replaceAll('{it}', '<i>');
         text = text.replaceAll('{/it}', '</i>');
+    };
+
+    if (text.includes('{ldquo}')) {
+        text = text.replaceAll('{ldquo}', '“');
+    };
+
+    if (text.includes('{rdquo}')) {
+        text = text.replaceAll('{rdquo}', '”');
+    };
+
+    if (text.includes('{sc}')) {
+        text = text.replaceAll('{sc}', '<span className="sc">');
+        text = text.replaceAll('{/sc}', '</span>');
+    };
+
+    if (text.includes('{sup}')) {
+        text = text.replaceAll('{sup}', '<sup>');
+        text = text.replaceAll('{/sup}', '</sup>');
     };
 
     if (text.includes('{i_link')) {
