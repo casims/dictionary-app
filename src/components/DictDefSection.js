@@ -18,9 +18,12 @@ function DictDefSection({singleDefinition}) {
 
     if (singleDefinition.et) {
         var wordOrigin = textParser(singleDefinition.et[0][1], 'et');
+        do {
+            wordOrigin = textParser(wordOrigin, 'et');
+        } while (wordOrigin.includes('{'));
         if (wordOrigin.includes('<a')) {
             wordOrigin = linkParser(wordOrigin);
-        }
+        };
     };
 
     if (singleDefinition.date) {
