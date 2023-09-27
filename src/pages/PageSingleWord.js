@@ -19,7 +19,9 @@ function PageSingleWord() {
 
     useEffect(() => {
         document.title = `${APP_TITLE} - ${word}`;
-    }, []);
+    }, [word]);
+
+    const [loading, setLoading] = useState(false);
 
     const [wordThesData, setWordThesData] = useState([]);
     useEffect(() => {
@@ -34,9 +36,11 @@ function PageSingleWord() {
     const [wordDictData, setWordDictData] = useState([]);
     useEffect(() => {
         const fetchWordDictData = async () => {
+            setLoading(true);
             const resDictionary = await fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${API_KEY_DICTIONARY}`);
             const capturedResDictionary = await resDictionary.json();
             setWordDictData(capturedResDictionary);
+            setLoading(false);
         };
         fetchWordDictData();
     }, [word]);
@@ -60,11 +64,15 @@ function PageSingleWord() {
         <>
             <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, null, word)}/>
             <div className='tab-container'>
-                <button onClick={() => handleTabs('dict')} className='active' id='dict-button'>Defintions</button>
-                <button onClick={() => handleTabs('thes')} className='' id='thes-button'>Synonyms</button>
+                    <button onClick={() => handleTabs('dict')} className='active' id='dict-button'>Defintions</button>
+                    <button onClick={() => handleTabs('thes')} className='' id='thes-button'>Synonyms</button>
             </div>
-            <Dictionary dictionaryData={wordDictData} activeTab={selectedTab}/>
-            <Thesaurus thesaurusData={wordThesData} activeTab={selectedTab}/>
+            {loading 
+            ?<section className='content-card'><p>Loading...</p></section>
+            :<>
+                <Dictionary dictionaryData={wordDictData} activeTab={selectedTab}/>
+                <Thesaurus thesaurusData={wordThesData} activeTab={selectedTab}/>
+            </>}
         </>
     );
 };
