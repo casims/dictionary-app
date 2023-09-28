@@ -212,8 +212,16 @@ header {
     padding: .4rem .6rem;
   }
 
+  .mobile-nav {
+    margin: 0 -2rem;
+  }
+
   .mobile-nav ul {
     display: none;
+  }
+
+  .mobile-nav .nav-search-wrapper {
+    padding: .4rem 2rem;
   }
 
   .nav-search-wrapper form {
