@@ -46,14 +46,18 @@ function Header() {
             <nav className='mobile-nav' id='dropdown-menu'>
                 <ul>
                     <li>
-                        <NavLink to='/bookmarks'>Bookmarks</NavLink>
+                        {menuExpanded
+                        ?<NavLink to='/bookmarks'>Bookmarks</NavLink>
+                        :<NavLink to='/bookmarks' tabIndex={-1}>Bookmarks</NavLink>}
                     </li>
                     <li>
-                        <NavLink to='/about'>About</NavLink>
+                        {menuExpanded
+                        ?<NavLink to='/about'>About</NavLink>
+                        :<NavLink to='/about' tabIndex={-1}>About</NavLink>}
                     </li>
                 </ul>
                 <div className='nav-search-wrapper'>
-                        <SearchBar />
+                        <SearchBar expanded={menuExpanded}/>
                 </div>
             </nav>
         </header>
