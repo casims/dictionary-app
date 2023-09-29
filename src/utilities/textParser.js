@@ -7,6 +7,7 @@ import DOMPurify from "dompurify";
 function textParser(text, type) {
 
     // Function taken from https://stackoverflow.com/questions/14880229/how-to-replace-a-substring-between-two-indices
+    // Allows to insert string into another string with 2 indexes
     String.prototype.replaceBetween = function(start, end, insert) {
         return this.substring(0, start) + insert + this.substring(end);
     };
