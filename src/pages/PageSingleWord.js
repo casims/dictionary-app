@@ -23,6 +23,7 @@ function PageSingleWord() {
 
     const [loading, setLoading] = useState(false);
 
+    // API call for thesaurus data
     const [wordThesData, setWordThesData] = useState([]);
     useEffect(() => {
         const fetchWordThesData = async () => {
@@ -33,6 +34,7 @@ function PageSingleWord() {
         fetchWordThesData();
     }, [word]);
 
+    // API call for dictionary data
     const [wordDictData, setWordDictData] = useState([]);
     useEffect(() => {
         const fetchWordDictData = async () => {
@@ -45,6 +47,7 @@ function PageSingleWord() {
         fetchWordDictData();
     }, [word]);
 
+    // Switch tabs functionality
     const [selectedTab, setSelectedTab] = useState('dict');
     useEffect(() => {
         if (selectedTab === 'dict') {
@@ -62,7 +65,8 @@ function PageSingleWord() {
 
     return(
         <>
-            <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, null, word)}/>
+            {/* Calls isBookmarked function to check if current word is bookmarked or not */}
+            <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, word)}/>
             <div className='tab-container'>
                     <button onClick={() => handleTabs('dict')} className='active' id='dict-button'>Defintions</button>
                     <button onClick={() => handleTabs('thes')} className='' id='thes-button'>Synonyms</button>

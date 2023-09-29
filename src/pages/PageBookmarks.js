@@ -27,7 +27,7 @@ function PageBookmarks() {
             <BookmarkItem
               key={bookmark}
               word={bookmark}
-              isBookmarked={isBookmarked(bookmarks, null, bookmark)}
+              isBookmarked={isBookmarked(bookmarks, bookmark)}
             />
           ))}
         </ul>
