@@ -65,12 +65,12 @@ function PageSingleWord() {
 
     return(
         <>
-            {/* Calls isBookmarked function to check if current word is bookmarked or not */}
             <WordHeader word={word} isBookmarked={isBookmarked(bookmarks, word)}/>
             <div className='tab-container'>
                     <button onClick={() => handleTabs('dict')} className='active' id='dict-button'>Defintions</button>
                     <button onClick={() => handleTabs('thes')} className='' id='thes-button'>Synonyms</button>
             </div>
+            {/* Loading section will be displayed during API calls */}
             {loading 
             ?<section className='content-card'><p>Loading...</p></section>
             :<>

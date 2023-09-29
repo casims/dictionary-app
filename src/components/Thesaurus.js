@@ -3,6 +3,7 @@ import ThesDefSection from "./ThesDefSection";
 function Thesaurus({thesaurusData, activeTab}) {
 
     const sectionContent = () => {
+        // If theres no results from the API "search" then the array will be empty
         if (thesaurusData.length === 0 || thesaurusData[0].def == null) {          
             return <section className="content-card"><p>Sorry, but no synonyms were found for this word.</p></section>;
         } else {

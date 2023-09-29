@@ -3,6 +3,9 @@ import linkParser from "../utilities/linkParser";
 
 function DictDefSection({singleDefinition}) {
 
+    // textParser will be called to read through text provided by API and format the tokens so the correct info is displayed properly
+    // linkParser will be called to make the links open a new tab is intended, this cant be done in textParser because dom-purify removes the 'target="_blank"' property
+
     const wordHeadWord = textParser(singleDefinition.hwi.hw, 'hw');
 
     const wordStems = singleDefinition.meta.stems;

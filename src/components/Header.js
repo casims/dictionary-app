@@ -24,6 +24,7 @@ function Header() {
         }
     }, [menuExpanded]);
 
+    // Collapses menu if window size changes and the menu layout changes, this prevents weird layout/visual glitches
     window.matchMedia('(min-width: 700px)').addEventListener('change', function() {
         if (menuExpanded === true) {
             setMenuExpanded(false);
@@ -46,6 +47,7 @@ function Header() {
             <nav className='mobile-nav' id='dropdown-menu'>
                 <ul>
                     <li>
+                        {/* If menu isnt expanded then hidden items are made to not be tabable */}
                         {menuExpanded
                         ?<NavLink to='/bookmarks'>Bookmarks</NavLink>
                         :<NavLink to='/bookmarks' tabIndex={-1}>Bookmarks</NavLink>}

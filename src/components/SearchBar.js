@@ -11,12 +11,14 @@ function SearchBar({expanded}) {
         if (searchInput === '') {
             return;
         } else {
+            // URL will be read and then API will be called with inputed search word
             navigate(`/word/${searchInput}`);
         };
     };
 
     return(
         <form onSubmit={handleSubmit}>
+            {/* Prevents search elements being "tabable" if menu isn't expanded */}
             {expanded
             ?<><input type="text" placeholder="Search words..." value={searchInput} className="search-input" onChange={(e) => setSearchInput(e.target.value)}/>
             <input type="submit" value="Search" className="search-submit"/></>
