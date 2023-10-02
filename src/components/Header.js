@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+
+// Components
 import SearchBar from './SearchBar';
 import MenuButton from '../assets/menu_icon.svg';
+
+// Assets
 import SearchButton from '../assets/search_icon.svg';
 
 function Header() {

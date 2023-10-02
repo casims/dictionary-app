@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+// Utilities
 import textParser from "../utilities/textParser";
 
 function ThesDefSubSection({singleSubDefinition, word}) {

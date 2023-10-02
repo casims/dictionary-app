@@ -1,8 +1,12 @@
 import { APP_TITLE } from "../globals/Globals";
-import { useSelector } from "react-redux";
-import BookmarkItem from "../components/BookmarkItem";
-import isBookmarked from "../utilities/isBookmarked";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+
+// Components
+import BookmarkItem from "../components/BookmarkItem";
+
+// Utilities
+import isBookmarked from "../utilities/isBookmarked";
 
 function PageBookmarks() {
 

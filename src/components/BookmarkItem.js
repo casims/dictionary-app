@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addBookmark, deleteBookmark } from "../features/bookmarks/bookmarksSlice";
+
+// Components
 import BookmarkButton from "./BookmarkButton";
+
+// Utilities
+import { addBookmark, deleteBookmark } from "../features/bookmarks/bookmarksSlice";
 
 function BookmarkItem({word, isBookmarked}) {
 

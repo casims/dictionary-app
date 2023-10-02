@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// Assets
 import BookmarkSVG from '../assets/bookmark.svg';
 import BookmarkSVGHover from '../assets/bookmark_hover.svg';
 import UnBookmarkSVG from '../assets/unbookmark.svg';

@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 //Components
+import WordHeader from '../components/WordHeader';
 import Thesaurus from '../components/Thesaurus';
 import Dictionary from '../components/Dictionary';
 
 //Utilities
 import isBookmarked from '../utilities/isBookmarked';
-import WordHeader from '../components/WordHeader';
 
 function PageSingleWord() {
 

@@ -1,6 +1,8 @@
-import SearchBar from "../components/SearchBar";
-import { useEffect } from "react";
 import { APP_TITLE } from "../globals/Globals";
+import { useEffect } from "react";
+
+// Components
+import SearchBar from "../components/SearchBar";
 
 function PageMain() {
 

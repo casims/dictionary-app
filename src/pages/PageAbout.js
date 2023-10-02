@@ -1,6 +1,8 @@
-import mwlogo from "../assets/MWLogo.png";
 import { APP_TITLE } from "../globals/Globals";
 import { useEffect } from "react";
+
+// Assets
+import mwlogo from "../assets/MWLogo.png";
 
 function PageAbout() {
 
