@@ -408,6 +408,10 @@ footer p {
   padding: .8rem;
 }
 
+.single-word-dict-section a {
+  text-decoration: underline;
+}
+
 .word-dict-information {
   display: flex;
   justify-content: space-between;
