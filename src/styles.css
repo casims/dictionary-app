@@ -158,6 +158,10 @@ header {
   transition: 0.2s height ease;
 }
 
+.active {
+  text-decoration: underline;
+}
+
 .mobile-nav ul {
   list-style: none;
   padding: 0;
