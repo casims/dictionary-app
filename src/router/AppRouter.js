@@ -10,6 +10,7 @@ import PageMain from '../pages/PageMain';
 import PageSingleWord from '../pages/PageSingleWord';
 import PageAbout from "../pages/PageAbout";
 import PageBookmarks from "../pages/PageBookmarks";
+import PageNotFound from "../pages/PageNotFound";
 
 function AppRouter() {
 
@@ -22,6 +23,7 @@ function AppRouter() {
                         <Route path="/word/:word" element={<PageSingleWord />}/>
                         <Route path="/bookmarks" element={<PageBookmarks />}/>
                         <Route path="/about" element={<PageAbout />}/>
+                        <Route path="*" exact element={<PageNotFound />}/>
                     </Routes>
                 </main>
             <Footer/>
